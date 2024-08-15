@@ -1,0 +1,47 @@
+Sajeev Debnath
+437-247-9056 |sajeev.debnath@mail.utoronto.ca |/linkedin.com/in/sajeev-debnath |/github.com/Sajeev-D |/Website
+Education
+University of Toronto Toronto, ON
+Bachelor of Applied Science, Computer Engineering (3rd Year) Sep. 2022 - June 2027
+Technical Skills
+Back-end: C++ (Proficient) , C(Proficient) , Python (Proficient) , JavaScript (Basic) , Node.js (Basic) ,
+Front-end: HTML (Intermediate) , CSS (Intermediate)
+Other tools: Git(Proficient)
+Work Experience
+Founder & Software Developer May 2024 - August 2024
+DisputeLens |GitHub |Website Toronto, ON
+•Programmed a tool in Python that creates timelines of agreements in multiple emails or threads
+•Obtained email contents using the Azure Identity library giving access to all emails in the user’s inbox
+•Fed email contents into ChatGPT using OpenAI API to generate a timeline of agreements
+•Designed the UI using PyQT 5 enabling the user to interact with the back-end code
+•Designing the company website in HTML, CSS, JavaScript & Node JS to efficiently convey our value
+proposition
+•Wrote a business plan, calculating cash flow projections, and interviewed 32 homeowners to define and validate our
+business idea
+Projects & Hackathons
+NomNom |C++, Git |Slide Deck |Demo January 2024 - April 2024
+•Designed a map app in C++ with the OpenStreetMap API for food delivery couriers to deliver efficiently
+•Programmed the A* algorithm to find the shortest path between two street intersections
+•Programmed the multi-start andsimulated annealing algorithms, increasing path efficiency through multiple
+pick-up and drop-off intersections by 6%
+•Project was part of the Software Design and Communication course (ECE297) at the University of Toronto,
+receiving a grade of A
+Graphify |C, Git |GitHub |Demo March 2024 - April 2024
+•Designed a graphing calculator DE1-SoC FPGA program in Cto analyze linear, quadratic, and cubic graphs
+•Wrote algorithms to find intersections, display intersections using character buffers, play background music, and
+take PS2 keyboard input.
+•Project was part of the Computer Organisation course (ECE243) at the University of Toronto, receiving a score of
+8.5 out of 10
+UTRA Hacks |C++, Git, Arduino |Devpost January 2024
+•Programmed the Arduino microcontroller inC++ to enable the rover to track lines and avoid obstacles
+•Developed software in a team using Gitresulting in 74 commits
+•Achieved 1st place out of 34 teams in the autonomous vehicle hackathon
+Maze Game |Verilog, FPGA December 2023
+•Wrote a program in HDL Verilog on the DE1-SoC FPGA to create a maze game
+•Developed software to enable PS2 keyboard input, background audio and timer functionality
+•Project was part of the Digital Systems course (ECE241) at the University of Toronto, receiving a score of 85 out
+of 90
+Othello |C |GitHub |Demo March 2023
+•Designed a terminal application in Cto play Othello against the computer.
+•Programmed the computer to make strong moves using the Greedy algorithm by choosing a move that flips the
+most squares for the current move.

@@ -3,6 +3,7 @@ import fitz  # PyMuPDF
 import pytesseract
 from PIL import Image
 import os
+import openai
 
 # Explicitly specify the tesseract executable path
 pytesseract.pytesseract.tesseract_cmd = r'C:\Users\sajee\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
@@ -52,4 +53,30 @@ def pdf_to_text_OCR(pdf_path, output_txt_path):
     with open(output_txt_path, "w") as f:
         f.write(full_text)
 
+# Function to analyze text using the OpenAI GPT model
+def analyze_text_with_gpt(input_file, output_file):
+    # Set up your OpenAI API key
+    openai.api_key = ''
 
+    # Read the input text file
+    with open(input_file, 'r') as file:
+        input_text = file.read()
+        input_text += "\n This is my renovation quote. Score this quote on scope issues, material selection and clarity of language out of a 100?"
+
+    # Make a request to the OpenAI GPT model
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",  # You can use "gpt-3.5-turbo" or "gpt-4"
+        messages=[
+            {"role": "system", "content": "You are an assistant that helps analyze renovation quotes."},
+            {"role": "user", "content": input_text}
+        ]
+    )
+
+    # Get the response text
+    output_text = response['choices'][0]['message']['content']
+
+    # Write the output text to the output file
+    with open(output_file, 'w') as file:
+        file.write(output_text)
+
+    print(f"Analysis complete! The result has been written to {output_file}.")

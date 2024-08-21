@@ -1,0 +1,88 @@
+#first {
+    padding: 5%;
+    background-color: lightblue;
+}
+
+#test {
+  /* Existing styles for the div (if any) */
+  background-color: lightblue;
+  display: flex;         /* Enable flexbox layout */
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: center;/* Center vertically */
+  align-items: center;    /* Center horizontally   
+ */
+  /* height: 100vh;          
+  width: 100vw;            */
+  }
+  
+  #test_title_text {
+    /* Styles for the p with id="test_title_text" */
+    font-size: 24px;
+    font-weight: bold;
+    color: darkblue;
+    text-align: center;
+  }
+  
+  #test_button {
+    /* Styles for the button with id="test_button" */
+    background-color: green;
+    color: white;
+    padding: 1% 3%;
+    border: none;
+    border-radius: 3px;
+    cursor:crosshair;
+    display: flex;
+  }
+
+  #second {
+    padding: 5%;
+  }
+
+  #test_get_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #test_name_input{
+    /* Styles for the input with id="test_name_input" */
+    padding: 1% 2%;
+    font-size: 16px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    margin-bottom: 1%;
+    width: 50%;
+    background-color: rgb(0, 0, 0);
+    margin-right: 5%;
+  }
+
+  #test_name_button {
+    /* Styles for the button with id="test_name_button" */
+    background-color: green;
+    color: white;
+    padding: 1% 3%;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  #test_greeting {
+    /* Styles for the p with id="test_greeting" */
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+
+  #third{
+    background-color: lightblue;
+    padding: 5%
+  }
+
+  #test_greeting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    font-style: normal;
+  }

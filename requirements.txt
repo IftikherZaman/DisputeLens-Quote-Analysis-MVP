@@ -6,7 +6,3 @@ flask
 flask_cors
 anthropic
 
-C:\Users\izcin\AppData\Roaming\Python\Python312\site-packages\anthropic\__init__.py
-
-
-['c:\\Users\\izcin\\OneDrive\\Documents\\GitHub\\DisputeLens-Quote-Analysis-MVP', 'C:\\Python312\\python312.zip', 'C:\\Python312\\DLLs', 'C:\\Python312\\Lib', 'C:\\Python312', 'C:\\Users\\izcin\\AppData\\Roaming\\Python\\Python312\\site-packages', 'C:\\Python312\\Lib\\site-packages']

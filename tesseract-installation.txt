@@ -1,0 +1,5 @@
+Important notes:
+
+For pytesseract to work, you need to have Tesseract OCR installed on your system. It's not a Python package, but a separate program. You can download it from the official GitHub repository: https://github.com/UB-Mannheim/tesseract/wiki
+After installing Tesseract OCR, make sure to add its installation directory to your system's PATH, or specify the path in your Python script as you did in your original code:
+pythonCopypytesseract.pytesseract.tesseract_cmd = r'C:\Users\sajee\AppData\Local\Programs\Tesseract

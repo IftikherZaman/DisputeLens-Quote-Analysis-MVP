@@ -3,7 +3,7 @@ import fitz  # PyMuPDF
 import pytesseract
 from PIL import Image
 import os
-import openai
+# import openai
 
 # Explicitly specify the tesseract executable path
 pytesseract.pytesseract.tesseract_cmd = r'C:\Users\sajee\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
@@ -51,6 +51,9 @@ def pdf_to_text_OCR(pdf_path, output_txt_path):
 
     # Write the extracted text to the output file
     with open(output_txt_path, "w") as f:
+        f.write(full_text)
+
+    with open(output_txt_path, "w", encoding='utf-8') as f:
         f.write(full_text)
 
 # Function to analyze text using the OpenAI GPT model

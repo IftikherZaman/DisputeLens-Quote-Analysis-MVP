@@ -2,6 +2,9 @@ PyPDF2
 PyMuPDF
 pytesseract
 Pillow
+flask
+flask_cors
+anthropic
 
 C:\Users\izcin\AppData\Roaming\Python\Python312\site-packages\anthropic\__init__.py
 

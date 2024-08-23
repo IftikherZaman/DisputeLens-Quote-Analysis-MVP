@@ -7,14 +7,8 @@
 # import os
 # import anthropic
 
-
-
-
 # # Explicitly specify the tesseract executable path
 # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
-
- 
 
 # # def analyze_text_with_claude(input_file, output_file):
 # #     # Set up your Anthropic API key
@@ -125,7 +119,6 @@
 
 # #    # Analyze the extracted text
 # #     analyze_text_with_claude(txt_path, output_analysis_path)
-
 
 import PyPDF2
 import fitz  # PyMuPDF

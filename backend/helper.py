@@ -80,3 +80,21 @@ def analyze_text_with_gpt(input_file, output_file):
         file.write(output_text)
 
     print(f"Analysis complete! The result has been written to {output_file}.")
+
+def callGPT(input_text):
+    # Set up your OpenAI API key
+    openai.api_key = ''
+
+    # Make a request to the OpenAI GPT model
+    response = openai.ChatCompletion.create(
+        model="gpt-4",  # You can use "gpt-3.5-turbo" or "gpt-4"
+        messages=[
+            {"role": "system", "content": "You are an assistant that helps analyze renovation quotes."},
+            {"role": "user", "content": input_text}
+        ]
+    )
+
+    # Get the response text
+    output_text = response['choices'][0]['message']['content']
+
+    print(output_text)

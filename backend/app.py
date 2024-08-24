@@ -102,3 +102,6 @@ def analyze_with_claude_endpoint():
             # Clean up temporary files
             os.unlink(temp_input_path)
             os.unlink(temp_output_path)
+
+if __name__ == '__main__':
+    app.run(debug=True)

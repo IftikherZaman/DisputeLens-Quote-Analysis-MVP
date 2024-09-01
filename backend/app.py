@@ -18,8 +18,7 @@ PDF_INPUT_PATH = os.path.join(BASE_DIR, 'quotes.pdf')
 OCR_OUTPUT_PATH = os.path.join(BASE_DIR, 'output_OCR.txt')
 GPT_OUTPUT_PATH = os.path.join(BASE_DIR, 'output_gpt.txt')
 
-app = Flask(__name__)
-CORS(app)
+
 
 @app.route('/')
 def home(): 

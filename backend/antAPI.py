@@ -153,7 +153,8 @@ def pdf_to_images(pdf_path):
     return images
 
 def analyze_with_claude(input_file, output_file, conversation_history=[]):
-    client = anthropic.Anthropic(api_key='api-key')
+   
+    client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
 
     # Detect file type
     file_type, encoding = mimetypes.guess_type(input_file)

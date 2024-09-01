@@ -5,4 +5,4 @@ Pillow
 flask
 flask_cors
 anthropic
-
+gunicorn

@@ -18,6 +18,14 @@ PDF_INPUT_PATH = os.path.join(BASE_DIR, 'quotes.pdf')
 OCR_OUTPUT_PATH = os.path.join(BASE_DIR, 'output_OCR.txt')
 GPT_OUTPUT_PATH = os.path.join(BASE_DIR, 'output_gpt.txt')
 
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/')
+def home(): 
+    return "Server is running"
+
+
 
 @app.route('/pdf_to_text', methods=['POST'])
 def pdf_to_text():
@@ -103,5 +111,6 @@ def analyze_with_claude_endpoint():
             os.unlink(temp_input_path)
             os.unlink(temp_output_path)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

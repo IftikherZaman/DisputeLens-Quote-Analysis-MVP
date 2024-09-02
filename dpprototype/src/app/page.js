@@ -150,7 +150,7 @@ export default function Home() {
     formData.append('conversation_history', JSON.stringify(history));
 
     try {
-      const response = await fetch('http://localhost:5000/analyze_with_claude', {
+      const response = await fetch('https://disputelens-quote-analysis-mvp.onrender.com/analyze_with_claude', {
         method: 'POST',
         body: formData,
       });

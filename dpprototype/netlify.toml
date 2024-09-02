@@ -1,45 +1,27 @@
-[
-build
-]
+[build]
   base = "dpprototype"
   command = "npm run build"
   publish = ".next"
 
-[[
-plugins
-]]
+[[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[
-headers
-]]
+[[headers]]
   for = "/"
-  [
-headers.values
-]
+  [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
 
-[[
-headers
-]]
-  for = "/.js"
-  [
-headers.values
-]
+[[headers]]
+  for = "/*.js"
+  [headers.values]
     Content-Type = "application/javascript"
 
-[[
-headers
-]]
+[[headers]]
   for = "/*.css"
-  [
-headers.values
-]
+  [headers.values]
     Content-Type = "text/css"
 
-[
-build.environment
-]
+[build.environment]
   NEXT_PUBLIC_API_URL = "https://disputelens-quote-analysis-mvp.onrender.com/"

@@ -1,3 +1,8 @@
+.whole_page {
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
 .head {
     background-color: rgb(153, 87, 0);
     display: flex;
@@ -7,54 +12,80 @@
     color: white;
     padding: 10px; 
   }
-
-
-  .input_field {
+  
+  .uploadContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .uploadButton {
     display: inline-block;
-    padding: 10px 15px;
-    cursor: pointer;
-    background-color: #4a90e2;
+    padding: 12px 24px;
+    background-color: #c8651b;
     color: white;
-    border: none;
-    border-radius: 5px;
+    font-family: Arial, sans-serif;
     font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
-  .input_field:hover {
-    background-color: #357abd;
+  .uploadButton:hover {
+    background-color: #944d07;
   }
   
-  .input_field:active {
-    background-color: #2a5d8f;
+  .fileInput {
+    display: none;
   }
   
-  /* Hide the default file input appearance */
-  .input_field::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-  
-  .input_field::before {
-    content: 'Choose File';
-    display: inline-block;
-    background: linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
+  .refreshImage {
     cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    font-weight: 700;
-    font-size: 10pt;
+    transition: transform 0.3s ease;
   }
   
-  .input_field:hover::before {
-    border-color: black;
+  .refreshImage:hover {
+    transform: rotate(180deg);
+  }
+
+  .loadingContainer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
   }
   
-  .input_field:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  .loadingSpinner {
+    width: 100%;
+    height: 100%;
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #c8651b; /* Your site's primary color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
   }
   
+  .loadingProgress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #c8651b; /* Your site's primary color */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

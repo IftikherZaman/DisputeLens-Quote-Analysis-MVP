@@ -96,7 +96,7 @@
 'use client'; 
 import Image from "next/image";
 import Link from 'next/link';
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import styles from "./style.module.css";
 
 export default function Home() {
@@ -105,8 +105,23 @@ export default function Home() {
   const [analysis, setAnalysis] = useState('');
   const [conversationHistory, setConversationHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);  // Added isLoading state
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
-  
+  useEffect(() => {
+    let interval;
+    if (isLoading) {
+      interval = setInterval(() => {
+        setLoadingProgress((prevProgress) => {
+          if (prevProgress >= 95) {
+            clearInterval(interval);
+            return 95;  // Cap at 95% until actual completion
+          }
+          return prevProgress + 1;
+        });
+      }, 100);
+    }
+    return () => clearInterval(interval);
+  }, [isLoading]);  
 
   async function analyzeWithClaude(file, history) {
     const formData = new FormData();
@@ -151,39 +166,66 @@ export default function Home() {
       setAnalysis('Failed to analyze the file.');
     } finally {
       console.log('Completed the api call');
-      setIsLoading(false); // Set loading to false after processing
+      // setIsLoading(false); // Set loading to false after processing
+      setLoadingProgress(100);  // Ensure it reaches 100% on completion
+      setTimeout(() => {
+        setIsLoading(false);
+        setLoadingProgress(0);
+      }, 500);  // Short delay to show 100% before resetting
     }
   };
 
   /********************End integration code**************** */ 
 
   // Render the UI
-  return (
-    <div>
-      {/* File input to trigger file upload */}
-      <div className={styles.head}>
-        <h1>Upload your Quote</h1>
-      </div>
-      
-      <input className={styles.input_field} type="file" onChange={handleFileUsingClaude} accept=".pdf,.txt,.jpg,.png" />
-  
-      {/* Conditional rendering based on loading state */}
-
-      {(() => {
-        if (isLoading) {
-          return <p id="loading-text">Analyzing... This may take a few seconds</p>;  // Display this while loading
-        } else {
-          return (
-            <div>
-              {/* Display analysis result when not loading */}
-              <h3>Analysis Result:</h3>
-              <pre>{analysis}</pre>
-            </div>
-          );
-        }
-      })()}
+return (
+  <div className={styles.whole_page}>
+    <div className={styles.head}>
+      <h1>Upload your Quote</h1>
     </div>
-  );
+
+    <div className={styles.uploadContainer}>
+      <label htmlFor="file-upload" className={styles.uploadButton}>
+        Upload Quote
+        <input
+          id="file-upload"
+          className={styles.fileInput}
+          type="file"
+          onChange={handleFileUsingClaude}
+          accept=".pdf,.txt,.jpg,.png"
+        />
+      </label>
+      <div 
+        className={styles.refreshImage}
+        onClick={() => window.location.reload()}
+        role="button"
+        tabIndex={0}
+        aria-label="Refresh page"
+      >
+        <Image
+          src="./refresh.png"
+          alt="Refresh"
+          width={24}
+          height={24}
+        />
+      </div>
+    </div>
+    
+    {/* Conditional rendering based on loading state */}
+    {isLoading ? (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loadingSpinner}></div>
+        <div className={styles.loadingProgress}>{loadingProgress}%</div>
+        <p>Analyzing... This may take a few seconds</p>
+      </div>
+    ) : analysis ? (
+      <div>
+        <h3>Analysis Result:</h3>
+        <pre>{analysis}</pre>
+      </div>
+    ) : null}
+  </div>
+);
 }
 
   // // Handle file upload and extract text

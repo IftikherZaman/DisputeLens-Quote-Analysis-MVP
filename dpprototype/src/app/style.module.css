@@ -207,3 +207,17 @@
     max-width: 20%; /* Adjust based on your logo's dimensions */
     height: auto;
   }
+
+  /* For screens smaller than 768px (typical tablet size) */
+  @media screen and (max-width: 768px) {
+    .logo {
+        max-width: 50%; /* Increased size for smaller screens */
+    }
+  }
+
+  /* For screens smaller than 480px (typical phone size) */
+  @media screen and (max-width: 480px) {
+    .logo {
+        max-width: 70%; /* Further increased size for phone screens */
+    }
+  }

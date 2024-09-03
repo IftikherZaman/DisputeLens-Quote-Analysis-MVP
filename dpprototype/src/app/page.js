@@ -98,6 +98,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import styles from "./style.module.css";
+import Head from 'next/head';
 
 export default function Home() {
   // State variables
@@ -179,9 +180,11 @@ export default function Home() {
 
   // Render the UI
   return (
+    <>
+    <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </Head>
     <div className={styles.container}>
-  
-
       <header className={styles.header}>
         <div className={styles.logoContainer}>
           <img src="/Logo.jpg" alt="Site Logo" className={styles.logo} />
@@ -234,6 +237,7 @@ export default function Home() {
       ) : null}
       </main>
     </div>
+    </>
   );
   }
   // // Handle file upload and extract text

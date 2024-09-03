@@ -1,60 +1,135 @@
-.head {
-    background-color: rgb(153, 87, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: white;
-    padding: 10px; 
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.header {
+  background-color: rgb(153, 87, 0);
+  padding: 20px;
+  text-align: center;
+}
 
-  .input_field {
-    display: inline-block;
-    padding: 10px 15px;
-    cursor: pointer;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .input_field:hover {
-    background-color: #357abd;
-  }
-  
-  .input_field:active {
-    background-color: #2a5d8f;
-  }
-  
-  /* Hide the default file input appearance */
-  .input_field::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-  
-  .input_field::before {
-    content: 'Choose File';
-    display: inline-block;
-    background: linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    font-weight: 700;
-    font-size: 10pt;
-  }
-  
-  .input_field:hover::before {
-    border-color: black;
-  }
-  
-  .input_field:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  }
-  
+.header h1 {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_field {
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.input_field:hover {
+  background-color: #357abd;
+}
+
+.input_field:active {
+  background-color: #2a5d8f;
+}
+
+.input_field::before {
+  content: 'Choose File';
+  display: inline-block;
+  background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+.input_field:hover::before {
+  border-color: black;
+}
+
+.input_field:active::before {
+  background: linear-gradient(to bottom, #e3e3e3, #f9f9f9);
+}
+
+.analysisContainer {
+  width: 100%;
+  max-width: 800px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.analysisText {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.input_field:hover::before {
+  border-color: black;
+}
+
+.input_field:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.analysisContainer {
+  width: 100%;
+  max-width: 800px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.analysisText {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.analysisText p {
+  margin-bottom: 15px;
+}
+
+.analysisText strong {
+  font-weight: 600;
+}
+
+.analysisText em {
+  font-style: italic;
+}
+
+.analysisText code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 14px;
+}

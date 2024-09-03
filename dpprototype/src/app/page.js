@@ -159,33 +159,28 @@ export default function Home() {
 
   // Render the UI
   return (
-    <div>
-      {/* File input to trigger file upload */}
-      <div className={styles.head}>
+    <div className={styles.container}>
+      <header className={styles.header}>
         <h1>Upload your Quote</h1>
-      </div>
+      </header>
       
-      <input className={styles.input_field} type="file" onChange={handleFileUsingClaude} accept=".pdf,.txt,.jpg,.png" />
-  
-      {/* Conditional rendering based on loading state */}
-
-      {(() => {
-        if (isLoading) {
-          return <p id="loading-text">Analyzing... This may take a few seconds</p>;  // Display this while loading
-        } else {
-          return (
-            <div>
-              {/* Display analysis result when not loading */}
-              <h3>Analysis Result:</h3>
-              <pre>{analysis}</pre>
-            </div>
-          );
-        }
-      })()}
+      <main className={styles.main}>
+  <input 
+    className={styles.input_field} 
+    type="file" 
+    onChange={handleFileUsingClaude} 
+    accept=".pdf,.txt,.jpg,.png" 
+  />
+  <div className={styles.analysisContainer}>
+    <h3>Analysis Result:</h3>
+    <div className={styles.analysisText}>
+      {analysis}
+    </div>
+  </div>
+</main>
     </div>
   );
 }
-
   // // Handle file upload and extract text
   // const handleFileUpload = async (event) => {
   //   const file = event.target.files[0];

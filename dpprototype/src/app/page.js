@@ -118,7 +118,7 @@ export default function Home() {
           }
           return prevProgress + 1;
         });
-      }, 100);
+      }, 200);
     }
     return () => clearInterval(interval);
   }, [isLoading]);  
@@ -178,56 +178,64 @@ export default function Home() {
   /********************End integration code**************** */ 
 
   // Render the UI
-return (
-  <div className={styles.whole_page}>
-    <div className={styles.head}>
-      <h1>Upload your Quote</h1>
-    </div>
+  return (
+    <div className={styles.container}>
+  
 
-    <div className={styles.uploadContainer}>
-      <label htmlFor="file-upload" className={styles.uploadButton}>
-        Upload Quote
-        <input
-          id="file-upload"
-          className={styles.fileInput}
-          type="file"
-          onChange={handleFileUsingClaude}
-          accept=".pdf,.txt,.jpg,.png"
-        />
-      </label>
-      <div 
-        className={styles.refreshImage}
-        onClick={() => window.location.reload()}
-        role="button"
-        tabIndex={0}
-        aria-label="Refresh page"
-      >
-        <Image
-          src="./refresh.png"
-          alt="Refresh"
-          width={24}
-          height={24}
-        />
+      <header className={styles.header}>
+        <div className={styles.logoContainer}>
+          <img src="/Logo.jpg" alt="Site Logo" className={styles.logo} />
+        </div>
+      </header>
+  
+      <main className={styles.main}>
+      <div className={styles.uploadContainer}>
+        <label htmlFor="file-upload" className={styles.uploadButton}>
+          Upload Quote
+          <input
+            id="file-upload"
+            className={styles.fileInput}
+            type="file"
+            onChange={handleFileUsingClaude}
+            accept=".pdf,.txt,.jpg,.png"
+          />
+        </label>
+        <div 
+          className={styles.refreshImage}
+          onClick={() => window.location.reload()}
+          role="button"
+          tabIndex={0}
+          aria-label="Refresh page"
+        >
+          <Image
+            src="./refresh.png"
+            alt="Refresh"
+            width={24}
+            height={24}
+          />
+        </div>
       </div>
+      
+  
+      {/* Conditional rendering based on loading state */}
+      {isLoading ? (
+        <div className={styles.loadingContainer}>
+          <div className={styles.loadingSpinner}></div>
+          <div className={styles.loadingProgress}>{loadingProgress}%</div>
+          <p>Analyzing... This may take a few seconds</p>
+        </div>
+      ) : analysis ? (
+          <div className={styles.analysisContainer}>
+              <h3>Analysis Result:</h3>
+              <div className={styles.analysisText}>
+              {analysis}
+              </div>
+          </div>
+      ) : null}
+      </main>
     </div>
-    
-    {/* Conditional rendering based on loading state */}
-    {isLoading ? (
-      <div className={styles.loadingContainer}>
-        <div className={styles.loadingSpinner}></div>
-        <div className={styles.loadingProgress}>{loadingProgress}%</div>
-        <p>Analyzing... This may take a few seconds</p>
-      </div>
-    ) : analysis ? (
-      <div>
-        <h3>Analysis Result:</h3>
-        <pre>{analysis}</pre>
-      </div>
-    ) : null}
-  </div>
-);
-}
-
+  );
+  }
   // // Handle file upload and extract text
   // const handleFileUpload = async (event) => {
   //   const file = event.target.files[0];
